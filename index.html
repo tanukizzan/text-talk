@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TextStream</title>
+  <link rel="stylesheet" href="./normalize.css">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <div id="result"></div>
+  <form onsubmit="return false;">
+    <input type="text" name="テキストエリア" id="text" autofocus>
+  </form>
+  <select id="voice-select"></select>
+  <button id="speak-btn">再生</button>
+  <button id="cancel-btn">停止</button>
+  <button id="pause-btn">一時停止</button>
+  <button id="resume-btn">再開</button>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
