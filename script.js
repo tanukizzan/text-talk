@@ -67,3 +67,8 @@ resumeBtn.addEventListener('click', function() {
   // 再生再開 (一時停止を解除)
   speechSynthesis.resume();
 });
+
+// ページ離脱時に警告
+window.onbeforeunload = function(e) {
+  e.returnValue = "ページを離れようとしています。よろしいですか？";
+}

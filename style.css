@@ -1,13 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+
 html {
   font-size: 18px;
 }
 
 body {
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
   margin: auto;
   width: 80%;
   max-width: 40rem;
+  font-family: 'Noto Sans JP', sans-serif;
+  cursor: default;
+  color: #222;
+}
+
+header {
+  margin: 1rem 0;
+}
+
+#result {
+  word-wrap: break-word;
+  font-size: 1.5rem;
+}
+
+#result p {
+  margin: 1.5rem 0;
+}
+
+#result p:first-child {
+  margin-top: 0;
 }
 
 form input[type="search"] {
   -webkit-appearance: none;
+}
+
+#text {
+  width: 100%;
+  font-size: 1.5rem;
+  outline: none;
+  border: none;
+  border-bottom: 1px dashed #222;
+  margin-bottom: 1rem;
+  padding: 0;
+  padding-bottom: 10px;
+}
+
+#voice-select {
+  padding: 5px 10px;
+}
+
+#voice-select, #speak-btn, #cancel-btn, #pause-btn, #resume-btn, #help-btn {
+  display: inline-block;
+  border-radius: 30px;
+  outline: none;
+  margin-bottom: 5px;
+}
+
+#speak-btn, #cancel-btn, #pause-btn, #resume-btn, #help-btn {
+  padding: 10px 20px;
+  border: none;
+  background: #efefef;
+}
+
+#voice-select:hover, #speak-btn:hover, #cancel-btn:hover, #pause-btn:hover, #resume-btn:hover, #help-btn:hover {
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+#speak-btn {
+  background: red;
+}
+
+#help-btn {
+  text-decoration: none;
+  color: #222;
+}
+
+.select-box {
+  display: inline-block;
+  margin-bottom: 1rem;
 }

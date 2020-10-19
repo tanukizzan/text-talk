@@ -4,21 +4,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TextStream</title>
-  <link rel="stylesheet" href="./normalize.css">
+  <title>かわりにしゃべるくん</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css">
   <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
+  <header>
+    <h1>かわりにしゃべるくん</h1>
+  </header>
   <div id="result"></div>
-  <form onsubmit="return false;">
+  <form class="text-area" onsubmit="return false;">
     <input type="text" name="テキストエリア" id="text" autofocus>
   </form>
-  <select id="voice-select"></select>
-  <button id="speak-btn">再生</button>
-  <button id="cancel-btn">停止</button>
-  <button id="pause-btn">一時停止</button>
-  <button id="resume-btn">再開</button>
+  <div class="select-box">
+    <select id="voice-select"></select>
+    <button id="speak-btn"><i class="fas fa-play"></i> 再生</button>
+    <button id="cancel-btn"><i class="fas fa-stop"></i> 停止</button>
+    <button id="pause-btn"><i class="fas fa-pause"></i> 一時停止</button>
+    <button id="resume-btn"><i class="fas fa-play"></i> 再開</button>
+    <a href="https://app.tanukizzan.com" target="_blank" rel="noopener noreferrer" id="help-btn">使い方</a>
+  </div>
 
   <script src="./script.js"></script>
 </body>
