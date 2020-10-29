@@ -7,17 +7,26 @@ html {
 body {
   display: flex;
   flex-flow: column;
-  min-height: 100vh;
   margin: auto;
-  width: 80%;
-  max-width: 40rem;
   font-family: 'Noto Sans JP', sans-serif;
   cursor: default;
   color: #222;
 }
 
 header {
-  margin: 1rem 0;
+  margin: 1rem auto;
+}
+
+.wrapper {
+  width: 80%;
+  display: flex;
+  margin: auto;
+  justify-content: center;
+}
+
+.main {
+  width: 40%;
+  margin-right: 20px;
 }
 
 #result {
@@ -39,6 +48,7 @@ form input[type="search"] {
 
 #text {
   width: 100%;
+  height: 1.7rem;
   font-size: 1.5rem;
   outline: none;
   border: none;
@@ -48,24 +58,39 @@ form input[type="search"] {
   padding-bottom: 10px;
 }
 
-#voice-select {
-  padding: 5px 10px;
+.select-box {
+  width: 40%;
+  height: 100%;
+  margin-bottom: 1rem;
+  position: sticky;
+  top: 50px;
 }
 
-#voice-select, #speak-btn, #cancel-btn, #pause-btn, #resume-btn, #help-btn {
+.select-box h3:first-child {
+  margin: 0;
+}
+
+#voice-select {
+  width: 100%;
+  max-width: 20rem;
+  padding: 5px 10px;
+  background-color: #fff;
+}
+
+#voice-select, .select-box button, .select-box a {
   display: inline-block;
   border-radius: 30px;
   outline: none;
   margin-bottom: 5px;
 }
 
-#speak-btn, #cancel-btn, #pause-btn, #resume-btn, #help-btn {
+.select-box button, .select-box a {
   padding: 10px 20px;
   border: none;
   background: #efefef;
 }
 
-#voice-select:hover, #speak-btn:hover, #cancel-btn:hover, #pause-btn:hover, #resume-btn:hover, #help-btn:hover {
+#voice-select:hover, .select-box button:hover, .select-box a:hover {
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
   cursor: pointer;
 }
@@ -74,12 +99,20 @@ form input[type="search"] {
   background: red;
 }
 
-#help-btn {
+.select-box a {
   text-decoration: none;
   color: #222;
 }
 
-.select-box {
-  display: inline-block;
-  margin-bottom: 1rem;
+/* スマホ用CSS */
+@media screen and (max-width: 1000px) {
+  header {
+    width: 80%;
+  }
+  .wrapper {
+    flex-direction: column;
+  }
+  .main, .select-box {
+    width: 100%;
+  }
 }

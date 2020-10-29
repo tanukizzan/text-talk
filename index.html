@@ -4,10 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>かわりにしゃべるくん</title>
+  <title>オウム・ガエシくん</title>
   <meta name="twitter:card" content="summary" />
   <meta property="og:url" content="https://app.tanukizzan.com/text-talk/" />
-  <meta property="og:title" content="かわりにしゃべるくん" />
+  <meta property="og:title" content="オウム・ガエシくん" />
   <meta property="og:description" content="テキストを入力すると自分の代わりに機械音声が喋ってくれるサイトです。" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css">
@@ -16,19 +16,38 @@
 
 <body>
   <header>
-    <h1>かわりにしゃべるくん</h1>
+    <h1>オウム・ガエシくん</h1>
   </header>
-  <div id="result"></div>
-  <form class="text-area" onsubmit="return false;">
-    <input type="text" name="テキストエリア" id="text" autofocus>
-  </form>
-  <div class="select-box">
-    <select id="voice-select"></select>
-    <button id="speak-btn"><i class="fas fa-play"></i> 再生</button>
-    <button id="cancel-btn"><i class="fas fa-stop"></i> 停止</button>
-    <button id="pause-btn"><i class="fas fa-pause"></i> 一時停止</button>
-    <button id="resume-btn"><i class="fas fa-play"></i> 再開</button>
-    <a href="https://github.com/tanukizzan/text-talk/wiki" target="_blank" rel="noopener noreferrer" id="help-btn">使い方</a>
+  <div class="wrapper">
+    <div class="main">
+      <div id="result"></div>
+      <form class="text-area" onsubmit="return false;">
+        <input type="text" name="テキストエリア" id="text" autofocus>
+      </form>
+    </div>
+    <div class="select-box">
+      <h3>使い方</h3>
+      <p>1. 言語を選択します</p>
+      <select id="voice-select"></select>
+      <p>2. 左のテキストエリアか、音声入力でしゃべらせたい内容を入力します</p>
+      <p>音声入力（赤い表示の間にお話ください）</p>
+      <div>
+        <button id="jp-btn"><i class="fas fa-microphone"></i> 日本語</button>
+        <button id="en-btn"><i class="fas fa-microphone"></i> English</button>
+        <button id="zh-btn"><i class="fas fa-microphone"></i> 中文</button>
+      </div>
+      <p>3. 再生ボタンを押すと読み上げが開始されます</p>
+      <div>
+        <button id="speak-btn"><i class="fas fa-play"></i> 再生</button>
+        <button id="cancel-btn"><i class="fas fa-stop"></i> 停止</button>
+        <button id="pause-btn"><i class="fas fa-pause"></i> 一時停止</button>
+        <button id="resume-btn"><i class="fas fa-play"></i> 再開</button>
+      </div>
+      <h3>その他</h3>
+      <a href="https://github.com/tanukizzan/text-talk/wiki" target="_blank" rel="noopener noreferrer"
+        id="help-btn">このサイトについて</a>
+      <a href="https://app.tanukizzan.com" target="_blank" rel="noopener noreferrer" id="help-btn">他のアプリ</a>
+    </div>
   </div>
 
   <script src="./script.js"></script>
