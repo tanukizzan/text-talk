@@ -9,12 +9,12 @@ body {
   flex-flow: column;
   margin: auto;
   font-family: 'Noto Sans JP', sans-serif;
-  cursor: default;
   color: #222;
 }
 
 header {
   margin: 1rem auto;
+  cursor: default;
 }
 
 .wrapper {
@@ -64,6 +64,7 @@ form input[type="search"] {
   margin-bottom: 1rem;
   position: sticky;
   top: 50px;
+  cursor: default;
 }
 
 .select-box h3:first-child {

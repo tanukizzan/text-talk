@@ -91,7 +91,6 @@ recognition.onend = () => {
 
 recognition.onresult = (event) => {
   text.value = event.results[0][0].transcript;
-  console.log(event);
 }
 
 jpBtn.onclick = () => {
