@@ -29,20 +29,27 @@
       <h3>使い方</h3>
       <p>1. 言語を選択します</p>
       <select id="voice-select"></select>
-      <p>2. 左のテキストエリアか、音声入力でしゃべらせたい内容を入力します</p>
+      <p>2. お好みで速度を調節します</p>
+      <div class="inline">
+        <input type="range" name="速度調節バー" id="speed-range" value="1.0" min="0.5" max="2.0" step="0.25" oninput="document.getElementById('output1').value=this.value">
+        <p>速度：<output id="output1">1</output></p>
+      </div>
+      <p>3. 左のテキストエリアか、音声入力でしゃべらせたい内容を入力します</p>
       <p>音声入力（赤い表示の間にお話ください）</p>
       <div>
         <button id="jp-btn"><i class="fas fa-microphone"></i> 日本語</button>
         <button id="en-btn"><i class="fas fa-microphone"></i> English</button>
         <button id="zh-btn"><i class="fas fa-microphone"></i> 中文</button>
       </div>
-      <p>3. 再生ボタンを押すと読み上げが開始されます</p>
+      <p>4. 再生ボタンを押すと読み上げが開始されます</p>
       <div>
         <button id="speak-btn"><i class="fas fa-play"></i> 再生</button>
         <button id="cancel-btn"><i class="fas fa-stop"></i> 停止</button>
         <button id="pause-btn"><i class="fas fa-pause"></i> 一時停止</button>
         <button id="resume-btn"><i class="fas fa-play"></i> 再開</button>
       </div>
+      <p>5. もう一度しゃべらせたい場合はテキストを選択して下のボタンを押します</p>
+      <button id="repeat-btn"><i class="fas fa-volume-up"></i> 読み上げ</button>
       <h3>その他</h3>
       <a href="https://github.com/tanukizzan/text-talk/wiki" target="_blank" rel="noopener noreferrer"
         id="help-btn">このサイトについて</a>

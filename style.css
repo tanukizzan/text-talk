@@ -13,19 +13,22 @@ body {
 }
 
 header {
-  margin: 1rem auto;
+  width: 100%;
+  margin: 0 auto 2rem auto;
   cursor: default;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .wrapper {
-  width: 80%;
+  width: 90%;
   display: flex;
   margin: auto;
   justify-content: center;
 }
 
 .main {
-  width: 40%;
+  width: 45%;
   margin-right: 20px;
 }
 
@@ -36,6 +39,7 @@ header {
 
 #result p {
   margin: 1.5rem 0;
+  line-height: 2rem;
 }
 
 #result p:first-child {
@@ -59,7 +63,7 @@ form input[type="search"] {
 }
 
 .select-box {
-  width: 40%;
+  width: 45%;
   height: 100%;
   margin-bottom: 1rem;
   position: sticky;
@@ -69,6 +73,11 @@ form input[type="search"] {
 
 .select-box h3:first-child {
   margin: 0;
+}
+
+.inline input, .inline p {
+  display: inline-block;
+  margin: 0 0.5rem 0 0;
 }
 
 #voice-select {
@@ -91,7 +100,7 @@ form input[type="search"] {
   background: #efefef;
 }
 
-#voice-select:hover, .select-box button:hover, .select-box a:hover {
+#repeat-btn:hover, #voice-select:hover, .select-box button:hover, .select-box a:hover {
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
   cursor: pointer;
 }
@@ -106,10 +115,7 @@ form input[type="search"] {
 }
 
 /* スマホ用CSS */
-@media screen and (max-width: 1000px) {
-  header {
-    width: 80%;
-  }
+@media screen and (max-width: 834px) {
   .wrapper {
     flex-direction: column;
   }

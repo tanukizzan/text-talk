@@ -1,5 +1,7 @@
 const text = document.getElementById('text');
+const result = document.getElementById('result');
 const voiceSelect = document.getElementById('voice-select');
+const speedRange = document.getElementById('speed-range');
 const jpBtn = document.getElementById('jp-btn');
 const enBtn = document.getElementById('en-btn');
 const zhBtn = document.getElementById('zh-btn');
@@ -7,7 +9,7 @@ const speakBtn = document.getElementById('speak-btn');
 const cancelBtn = document.getElementById('cancel-btn');
 const pauseBtn = document.getElementById('pause-btn');
 const resumeBtn = document.getElementById('resume-btn');
-const result = document.getElementById('result');
+const repeatBtn = document.getElementById('repeat-btn');
 
 // selectタグの中身を声の名前が入ったoptionタグで埋める
 function appendVoices() {
@@ -41,6 +43,8 @@ speakBtn.onclick = () => {
   uttr.voice = speechSynthesis
     .getVoices()
     .filter(voice => voice.name === voiceSelect.value)[0];
+  // 読み上げ速度を指定
+  uttr.rate = speedRange.value;
   // 発言を再生 (発言キュー発言に追加)
   speechSynthesis.speak(uttr);
   // テキストの入力履歴に追加
@@ -50,6 +54,19 @@ speakBtn.onclick = () => {
   // 再度テキストエリアにフォーカス
   text.focus();
 };
+
+// もう一度読み上げボタン
+repeatBtn.onclick = () => {
+  const selectText = window.getSelection().toString();
+  // 発言を作成
+  const uttr = new SpeechSynthesisUtterance(selectText);
+  // ③ 選択された声を指定
+  uttr.voice = speechSynthesis
+    .getVoices()
+    .filter(voice => voice.name === voiceSelect.value)[0];
+  // 発言を再生 (発言キュー発言に追加)
+  speechSynthesis.speak(uttr);
+}
 
 // Enterキーで発話
 text.addEventListener('keypress', onkeypress);
