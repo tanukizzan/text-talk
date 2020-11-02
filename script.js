@@ -55,19 +55,6 @@ speakBtn.onclick = () => {
   text.focus();
 };
 
-// もう一度読み上げボタン
-repeatBtn.onclick = () => {
-  const selectText = window.getSelection().toString();
-  // 発言を作成
-  const uttr = new SpeechSynthesisUtterance(selectText);
-  // ③ 選択された声を指定
-  uttr.voice = speechSynthesis
-    .getVoices()
-    .filter(voice => voice.name === voiceSelect.value)[0];
-  // 発言を再生 (発言キュー発言に追加)
-  speechSynthesis.speak(uttr);
-}
-
 // Enterキーで発話
 text.addEventListener('keypress', onkeypress);
 function onkeypress(event) {
@@ -88,6 +75,21 @@ resumeBtn.addEventListener('click', function () {
   // 再生再開 (一時停止を解除)
   speechSynthesis.resume();
 });
+
+// もう一度読み上げボタン
+repeatBtn.onclick = () => {
+  const selectText = window.getSelection().toString();
+  // 発言を作成
+  const uttr = new SpeechSynthesisUtterance(selectText);
+  // ③ 選択された声を指定
+  uttr.voice = speechSynthesis
+    .getVoices()
+    .filter(voice => voice.name === voiceSelect.value)[0];
+  // 読み上げ速度を指定
+  uttr.rate = speedRange.value;
+  // 発言を再生 (発言キュー発言に追加)
+  speechSynthesis.speak(uttr);
+}
 
 // ページ離脱時に警告
 window.onbeforeunload = e => {
